@@ -1,0 +1,53 @@
+.section {
+  margin: 0 0 0;
+  padding: 2em 1em;
+}
+
+.section--hero {
+  min-height: 100vh;
+}
+
+.group--centered {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logos .wp-block-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.logos .logos img {
+  max-height: 120px;
+  width: auto;
+}
+
+.formulario {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.2);
+  background-color: #ccc;
+}
+
+.formulario__left {
+  padding: 3em;
+}
+
+.formulario__right {
+  background-color: white;
+  padding: 2em;
+  border-radius: 0 4px 4px 0;
+}
+/*# sourceMappingURL=bridges.css.map */

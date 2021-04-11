@@ -1,0 +1,47 @@
+.section {
+    margin: 0 0 0;
+    padding: 2em 1em;
+    
+    &--hero {
+        min-height: 100vh;
+    }
+}
+
+
+.group--centered {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logos {
+
+    .wp-block-column {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+   }
+   
+   .logos img {
+       max-height: 120px;
+       width: auto;
+   }
+}
+
+
+.formulario {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.2);
+    background-color: #ccc;
+    
+    &__left {
+        padding: 3em;
+    }
+    &__right {
+        background-color: white;
+        padding: 2em;
+        border-radius: 0 4px 4px 0;
+    }
+}
+

@@ -1,0 +1,68 @@
+/* Ajustes portada
+ * =============== */
+
+/*Barra de búsqueda*/
+
+.geodir-loc-bar-in {
+    /* background: #f3f3f3; */
+    /* border: 1px #e6e6e6 solid; */
+    border: 1px RGB(128, 128, 128) solid;
+    background-color: RGBA(74, 92, 124, 0.5);
+    border-radius: 4px;
+  }
+  
+  .geodir-loc-bar {
+    border-top:0;
+    border-bottom: 0;
+  }
+  
+  .geodir_submit_search {
+      text-align: center;
+    background-color: RGBA(256, 256, 256, 0.9);
+  }
+  
+  body .geodir-listing-search.gd-search-bar-style .geodir-loc-bar .clearfix.geodir-loc-bar-in .geodir-search .gd-search-input-wrapper {
+    color: #000;
+    background-color: rgba(256,256,256,0.9);
+    border-radius: 4px;
+  }
+  
+  /*Tarjetas*/
+  .tarjeta {
+   
+    padding-top: 2em;
+    padding-bottom: 1em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    text-align: center;
+    border-radius: px;
+  
+      font-weight: 900;
+  }
+  
+  .tarjeta h2 {
+    font-size: 22px;
+  }
+  
+  /*Propiedades
+   * ==========*/
+  
+  .info_box {
+    padding-top: 1em;
+      padding-left: 2em;
+    padding-bottom: 1em;
+    border-left: 2px solid gray;
+    font-size: small;
+  }
+  
+  .precio {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    color: #aa1c1c;
+    margin-bottom: 0.5em;
+  }
+  

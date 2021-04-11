@@ -1,0 +1,21 @@
+@font-face {
+	font-family: Akzidenz Grotestk Bold;
+    src: url(http://casapucp.com/casa2020/wp-content/fonts/akzidenz-grotesk/akzidenz-grotesk-bold.otf);
+    font-weight: bold;
+    }
+
+@font-face {
+	font-family: Akzidenz Grotestk;
+    src: url(http://casapucp.com/casa2020/wp-content/fonts/akzidenz-grotesk/akzidenz-grotesk-regular.otf);
+    font-weight: regular;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Akzidenz Grotestk Bold"}
+
+body{font-family: "Akzidenz Grotestk"}

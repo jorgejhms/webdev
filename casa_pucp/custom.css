@@ -1,0 +1,18 @@
+.header-menu-1 {
+	text-shadow: 1px 01px 0px rgba(0,0,0,0.5)
+} /* sombras en el menú de cabecera */
+
+html {
+  scroll-behavior: smooth;
+} /* animación de scroll suave */
+
+/* Animaciones
+ * ============ */
+
+.grow {
+	transition: transform 100ms cubic-bezier(.55,.06,.68,.19);
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}

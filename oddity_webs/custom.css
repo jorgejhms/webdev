@@ -1,0 +1,17 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  
+  
+  /* Animaciones
+   * ============ */
+  
+  .grow {
+      transition: transform 100ms cubic-bezier(.55,.06,.68,.19);
+  }
+  
+  .grow:hover {
+    transform: scale(1.1);
+  }
+  
