@@ -1,0 +1,441 @@
+// Modificaciones diseño plantilla
+
+// variables
+
+$clr-black: black;
+$clr-white: white;
+$clr-gray: rgb(70,70,70);
+$clr-yaku: #009dc8;
+$clr-wayra: #ffcc00;
+$clr-nina: #e94e0f;
+$clr-jallpa: #3FA662;
+$border-black: 1px solid black;
+$ff-sans: Work Sans, sans-serif;
+$fs-s: 0.7rem; // H2
+$fs-r: 1rem;
+$fs-m: 1.1rem;
+$fs-l: 2rem; // H3
+$fs-xl: 4rem; // noticia destacada + elemento
+$fs-xxl: 4.3rem; // H1
+
+
+// mixins responsive
+
+@mixin phone {
+    @media (max-width: 514px) {
+        @content;
+    }
+}
+
+@mixin tablet-small {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet-big {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+// Ajustes plantilla
+
+p {
+    font-size: $fs-m; // aprox 18px Spectral
+}
+
+.post {
+
+    figcaption {
+        /* borde bajo imagenes */
+        border-bottom: $border-black;
+        text-align: left !important; // forzando plantilla
+    }
+}
+
+h2 {
+    // Lineas en titulos h2
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 0.5em;
+
+    &:before,
+    &:after {
+        // dibuja linea
+        background-color: $clr-black;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+
+    }
+
+    &:before {
+        // linea a la izquierda 
+        right: 0.5em;
+        margin-left: -50%;
+    }
+
+    &:after {
+        // linea a la derecha
+        left: 0.5em;
+        margin-right: -50%;
+    }
+}
+
+h3 {
+    margin-top: 0em !important; // elimina margen superior
+
+    a:hover {
+        // subrayado de links
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+    }
+}
+
+// Caja de autor
+.author-box[data-type="type-2"]::after,
+.author-box[data-type="type-2"]::before {
+    // cambia color lineas en la caja de autor
+    background: $clr-black;
+}
+
+.author-box[data-type="type-2"] {
+    // borde inferior caja de autor
+    border-bottom: $border-black;
+}
+
+
+.entry-content> :not(.alignfull) [class*="_inner-container"] {
+    //arreglo sección más historias
+    --inner-block-width: 100%;
+}
+
+// Nuevas clases
+
+.slider {
+    // Slider hero
+    margin-bottom: 0; // eliminación margen inferior
+
+    .slick-dots li button::before {
+        // Ajuste tamaño de los puntos del slider
+        content: "";
+        background-color: $clr-white;
+        border-radius: 50%;
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+
+    .slick-next,
+    .slick-prev {
+        //elimina flechas
+        display: none !important;
+    }
+}
+
+.seccion {
+    // establece padding para todas las secciones
+    margin-bottom: 0;
+    padding: 3rem 1em 3em 1em;
+
+    &--oscura {
+
+        // pone color texto blanco en secciones oscuras
+        color: $clr-white;
+
+        h2:before,
+        h2:after {
+            // convierte lineas h2 blancas
+            background-color: $clr-white;
+        }
+    }
+}
+
+.txt-xl {
+    // fuentes grandes cabecera
+    font-size: 5.65rem;
+    line-height: 75px;
+    max-width: 15ch;
+    margin: 1em auto;
+
+    @include phone {
+        font-size: 2.8rem;
+    }
+}
+
+.btn .wp-block-button__link {
+    // ajustes botones slider
+    color: $clr-white;
+    background-color: rgba(128, 128, 128, 0.3) !important;
+    border: 1px solid rgba(256, 256, 256, 0.5);
+    font-weight: 500;
+    font-family: $ff-sans;
+}
+
+.historias {
+    // sección de selección de los 4 elementos
+    margin-top: 0;
+    padding: 2.5em 1em 5.38rem 1em !important;
+
+    &__cols {
+        margin: 1em;
+
+        @include phone {
+            display: flex;
+        }
+
+        h3 {
+            font-size: $fs-l;
+        }
+
+        p {
+            // estilo tipografia parrafos
+            font-family: $ff-sans;
+            font-size: $fs-r;
+            max-width: 9ch;
+            margin: 0 auto;
+            line-height: 1em;
+            color: $clr-gray ;
+        }
+
+        .historias__col {
+            // ajustes dentro de cada columna
+            border-right: $border-black; //borde de columnas
+            margin-left: 0 !important;
+
+            @include tablet-small {
+                border-right: 0;
+            }
+
+            @include phone {
+                border-bottom: $border-black;
+                margin-left: 0 !important;
+                padding-bottom: 2em;
+            }
+
+            &:last-child {
+                border-right: 0;
+
+                @include phone {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.destacado {
+    /*margin: 1em 0 1em 0;*/
+    padding: 1em 0 1em 0;
+
+    @include tablet-big {
+        flex-wrap: nowrap;
+    }
+
+    @include tablet-big {
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        margin: 10% 0 5rem 0 !important; // alinea h2 10% de foto
+
+        @include tablet-big {
+            margin: 1% 0 30% 0 !important;
+        }
+
+        @include tablet-big {
+            margin: 1em 0 2em 0 !important;
+        }
+
+        @include phone {
+            margin: 0 0 2em 0 !important;
+        }
+    }
+
+    h3 {
+        max-width: 14ch !important; // ancho máximo texto
+        font-size: $fs-xl;
+
+        @include tablet-big {
+            font-size: 3.5em;
+            margin: 0 auto;
+        }
+    }
+
+    .wp-block-column {
+        @include tablet-small {
+            flex-basis: 100% !important;
+            margin: 1em 0;
+        }
+    }
+}
+
+/* Mas Historias */
+
+.posts {
+    .ultp-block-item {
+        width: 100%;
+    }
+
+    .ultp-block-row {
+
+        // corrección grid de post responsive
+        @include phone {
+            display: flex !important;
+            flex-wrap: wrap;
+            grid-gap: 0;
+        }
+    }
+
+    .ultp-block-content-wrap {
+        padding: 0.5em;
+    }
+
+}
+
+
+.masHistorias img {
+    width: 100%;
+}
+
+/* Fotohistorias */
+
+.fotohistorias {
+    h2 {
+        margin: 10% 0 5rem 0 !important;
+
+        @include tablet-small {
+            margin: 1em 0 2em 0 !important;
+        }
+    }
+
+    .wp-block-column {
+        margin-top: 0;
+    }
+
+}
+
+.videos {
+
+    flex-wrap: nowrap;
+
+    @include phone {
+        flex-wrap: wrap;
+    }
+
+    .wp-block-column {
+        padding: 0.5em;
+    }
+
+
+    .wp-block-column:hover {
+        background-color: rgba(221, 221, 221, 1);
+        color: $clr-black;
+        transition: background-color 0.3s ease-in;
+    }
+
+    h3 {
+        font-size: $fs-l;
+    }
+
+}
+
+/* Libros */
+
+.libros {
+    .wp-block-columns {
+        margin: 1em auto 1em auto;
+    }
+
+    figcaption {
+        // establece tipografia para descarga libros
+        color: $clr-black !important;
+        font-family: $ff-sans;
+        font-size: $fs-r;
+    }
+
+}
+
+.newsletter h3 {
+    font-size: $fs-l;
+}
+
+/* Footer */
+.logos {
+    display: flex;
+    gap: 3rem;
+
+    img {
+        align-self: center;
+    }
+}
+
+
+/* elemento */
+
+.elemento__1 {
+    margin-top: 5em;
+}
+
+.elemento__col1 {
+    padding: 5em 0;
+
+    h3 {
+        font-size: $fs-xl;
+    }
+}
+
+.elemento__col2 {
+    border-top: $border-black;
+    padding: 5em 0;
+}
+
+/* Otros elementos */
+
+.otros-elementos {
+
+    .wp-block-columns {
+        @include tablet-big {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .wp-block-column {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+        @include tablet-small {
+            margin-left: 0;
+            grid-template-columns: auto auto;
+        }
+    }
+
+    figure {
+        grid-row: span 2;
+        align-self: center;
+        justify-self: right;
+        padding: 1em;
+    }
+
+    img {
+        max-height: 4.3rem;
+        width: auto;
+    }
+
+    h3 {
+        align-self: end;
+        font-size: $fs-l;
+        margin: 0;
+    }
+
+    p {
+        font-family: $ff-sans;
+        font-size: $fs-s;
+    }
+
+}
