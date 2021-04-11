@@ -1,0 +1,10 @@
+.tarjeta {
+    background-color:  rgba(87, 52, 34);
+    padding: 40px;
+    color: white;
+    flex:0 0 350px;
+      box-shadow:0px 0px 20px 1px rgba(128,128,128,0.5)
+  }
+  .tarjeta h2 {
+      color: white;
+  }

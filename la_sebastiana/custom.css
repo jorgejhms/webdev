@@ -1,0 +1,8 @@
+/*Separador menu */
+.header-menu-1 li:after{
+    content: "|";
+  }
+  
+  .header-menu-1 li:last-child:after{
+    content: "";
+  }

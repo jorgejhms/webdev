@@ -1,0 +1,60 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /*Circulos en texto */
+  
+  .circle:before {
+      content: "";
+      position: relative;
+      z-index: -1;
+      height: 5em;
+    width: 5em;
+      background-color: #db302b;
+    border-radius: 50%;
+       display: block;
+      margin-left: auto;
+      margin-right: auto;
+      top: 4em;
+  }
+  
+  .circle--blue:before {
+      background-color: #357eee;
+  }
+  
+  .circle--green:before {
+      background-color: #28ca2b;
+  }
+  
+  .circle--yellow:before {
+      background-color: #f6b62d;
+  }
+  
+  .circle--rose:before {
+      background-color: #fd116f;
+  }
+  
+  
+  /* Ajustes menu */
+  nav[class*="menu"] li:hover > a, nav[class*="menu"] li a.ct-highlight, nav[class*="menu"] li[class*="current-menu-"] > a {
+  font-weight: 500;
+  }
+  
+  div[id^='gutenslider-']  {
+       margin-bottom: 0;
+      --gutenslider-min-height-md: 100vh !important;
+  --gutenslider-min-height-sm: 100vh !important;
+  }
+  
+  
+  .wp-block-eedee-block-gutenslider .slick-dotted.slick-slider {
+   margin-bottom:0;
+  }
+  
+  .wp-block-cover-image .wp-block-cover__inner-container,
+  .wp-block-cover .wp-block-cover__inner-container {
+   width:100%;
+   z-index:1;
+   color:black;
+  }
+  

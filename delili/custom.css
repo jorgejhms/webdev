@@ -1,0 +1,19 @@
+/*
+.attachment-woocommerce_thumbnail {
+    clip-path: polygon(
+        51% 0px,
+        100% 0px,
+        98.58% 51.00%,
+        100% 100%,
+        56% 98.13%,
+        1% 100%,
+        0px 45%,
+        1% 2%);
+    border: 12px #c62118 solid;
+    }
+*/
+
+/* Justificación de texto en post */
+p {
+  text-align: justify;
+}
