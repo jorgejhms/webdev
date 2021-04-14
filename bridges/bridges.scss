@@ -2,9 +2,17 @@
     margin: 0 0 0;
     padding: 2em 1em;
     
-    &--hero {
+    /*&--hero {
         min-height: 100vh;
+    }*/
+
+    &--red a {
+        color: white !important;
     }
+
+    &--red a:hover {
+            text-decoration: underline;
+        }
 }
 
 
@@ -45,3 +53,19 @@
     }
 }
 
+.cards {
+    display: flex;
+    flex-flow: row wrap !important;
+    gap: 2em;
+    margin: 2em 0;
+    justify-content: space-between;
+    
+    & .wp-block-column {
+      flex: 1 0 20em;
+      padding: 2em;
+      border: 1px solid rgba(128,128,128,0.3);
+      border-radius: 5px;
+      margin: 0 !important;
+    }
+  }
+  

@@ -1,10 +1,17 @@
 .section {
   margin: 0 0 0;
   padding: 2em 1em;
+  /*&--hero {
+        min-height: 100vh;
+    }*/
 }
 
-.section--hero {
-  min-height: 100vh;
+.section--red a {
+  color: white !important;
+}
+
+.section--red a:hover {
+  text-decoration: underline;
 }
 
 .group--centered {
@@ -49,5 +56,30 @@
   background-color: white;
   padding: 2em;
   border-radius: 0 4px 4px 0;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-flow: row wrap !important;
+          flex-flow: row wrap !important;
+  gap: 2em;
+  margin: 2em 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cards .wp-block-column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 20em;
+          flex: 1 0 20em;
+  padding: 2em;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 5px;
+  margin: 0 !important;
 }
 /*# sourceMappingURL=bridges.css.map */
