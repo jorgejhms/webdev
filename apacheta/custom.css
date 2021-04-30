@@ -448,4 +448,8 @@ h3 a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+.ct-featured-image figcaption {
+  margin: 0.5em 2em;
+}
 /*# sourceMappingURL=custom.css.map */
