@@ -232,7 +232,7 @@ h3 {
     flex-wrap: nowrap;
   }
 
-  @include tablet-big {
+  @include tablet-small {
     flex-wrap: wrap;
   }
 
@@ -298,13 +298,6 @@ h3 {
 /* Fotohistorias */
 
 .fotohistorias {
-  h2 {
-    margin: 10% 0 5rem 0 !important;
-
-    @include tablet-small {
-      margin: 1em 0 2em 0 !important;
-    }
-  }
 
   .wp-block-column {
     margin-top: 0;
@@ -354,11 +347,30 @@ h3 {
 
 /* Footer */
 .logos {
-  display: flex;
-  gap: 3rem;
+  display: grid;
+  gap: 2em 1em;
+  grid-template-columns: 1fr 1fr;
+  place-items: start center;
+
+  > :first-child {
+    grid-column: span 2;
+    width: auto;
+    padding: 0 1em;
+    max-height: 80px;
+  }
+
+  > :nth-child(2){
+    place-self: start end;
+  }
 
   img {
-    align-self: center;
+  display: block;
+  margin: 0 auto;
+  }
+
+  p {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-s);
   }
 }
 
@@ -458,4 +470,8 @@ h3 {
     margin: 0.5em 2em;
   }
 
+}
+
+.titular{
+  font-family: var(--ff-sans);
 }
