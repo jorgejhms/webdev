@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/* Copyright */
+/**
+ * Diseño elaborado por Jorge Meneses
+ * jorgejhms@gmail.com
+ * GitHub: https://github.com/jorgejhms
+ * 
+ * Copyright (c) 2021
+ * Licensed GPLv2+
+ */
+/* Variables Generales */
 :root {
   --clr-black: black;
   --clr-white: white;
@@ -9,30 +20,39 @@
   --border-black: 1px solid black;
   --ff-sans: Work Sans, sans-serif;
   --fs-s: 0.7rem;
+  /* H2 */
   --fs-r: 1rem;
   --fs-m: 1.1rem;
   --fs-l: 2rem;
+  /* H3 */
   --fs-xl: 4rem;
+  /* noticia destacada + elemento */
   --fs-xxl: 4.3rem;
+  /* H1 */
 }
 
+/**Ajustes plantilla */
 p {
   font-size: var(--fs-m);
+  /* aprox 18px fuente Spectral */
 }
 
 .post figcaption {
   /* borde bajo imagenes */
   border-bottom: var(--border-black);
   text-align: left !important;
+  /* forzando plantilla */
 }
 
 h2 {
+  /* Lineas en titulos h2 */
   overflow: hidden;
   text-align: center;
   padding-bottom: 0.5em;
 }
 
 h2:before, h2:after {
+  /* dibuja linea alrededor de los títulos */
   background-color: var(--clr-black);
   content: '';
   display: inline-block;
@@ -43,42 +63,54 @@ h2:before, h2:after {
 }
 
 h2:before {
+  /* linea lado izquierdo */
   right: 0.5em;
   margin-left: -50%;
 }
 
 h2:after {
+  /* linea lado derecho */
   left: 0.5em;
   margin-right: -50%;
 }
 
 h3 {
   margin-top: 0em !important;
+  /* elimina margen superior */
 }
 
 h3 a:hover {
+  /* subrayado de links */
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
 
+/* Caja de autor */
 .author-box[data-type='type-2']::after,
 .author-box[data-type='type-2']::before {
+  /* cambia color lineas en la caja de autor */
   background: var(--clr-black);
 }
 
 .author-box[data-type='type-2'] {
+  /* borde inferior caja de autor  */
   border-bottom: var(--border-black);
 }
 
 .entry-content > :not(.alignfull) [class*='_inner-container'] {
+  /*arreglo sección más historias */
   --inner-block-width: 100%;
 }
 
+/* Nuevas clases */
 .slider {
+  /* Slider hero */
   margin-bottom: 0;
+  /* eliminación margen inferior */
 }
 
 .slider .slick-dots li button::before {
+  /* Ajuste tamaño de los puntos del slider */
   content: '';
   background-color: var(--clr-white);
   border-radius: 50%;
@@ -88,24 +120,29 @@ h3 a:hover {
 
 .slider .slick-next,
 .slider .slick-prev {
+  /*elimina flechas */
   display: none !important;
 }
 
 .seccion {
+  /* establece padding para todas las secciones */
   margin-bottom: 0;
   padding: 3rem 1em 3em 1em;
 }
 
 .seccion--oscura {
+  /* pone color texto blanco en secciones oscuras */
   color: var(--clr-white);
 }
 
 .seccion--oscura h2:before,
 .seccion--oscura h2:after {
+  /* convierte lineas h2 blancas */
   background-color: var(--clr-white);
 }
 
 .txt-xl {
+  /* fuentes grandes cabecera */
   font-size: 5.65rem;
   line-height: 75px;
   max-width: 15ch;
@@ -119,6 +156,7 @@ h3 a:hover {
 }
 
 .btn .wp-block-button__link {
+  /* ajustes botones slider*/
   color: var(--clr-white);
   background-color: rgba(128, 128, 128, 0.3) !important;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -127,6 +165,7 @@ h3 a:hover {
 }
 
 .historias {
+  /* sección de selección de los 4 elementos*/
   margin-top: 0;
   padding: 2.5em 1em 5.38rem 1em !important;
 }
@@ -148,6 +187,7 @@ h3 a:hover {
 }
 
 .historias__cols p {
+  /* estilo tipografia parrafos*/
   font-family: var(--ff-sans);
   font-size: var(--fs-r);
   max-width: 9ch;
@@ -157,7 +197,9 @@ h3 a:hover {
 }
 
 .historias__cols .historias__col {
+  /* ajustes dentro de cada columna*/
   border-right: var(--border-black);
+  /*borde de columnas*/
   margin-left: 0 !important;
 }
 
@@ -186,7 +228,6 @@ h3 a:hover {
 }
 
 .destacado {
-  /*margin: 1em 0 1em 0;*/
   padding: 1em 0 1em 0;
 }
 
@@ -206,6 +247,7 @@ h3 a:hover {
 
 .destacado h2 {
   margin: 10% 0 5rem 0 !important;
+  /* alinea h2 aproximadamente 10% de foto*/
 }
 
 @media (max-width: 992px) {
@@ -228,6 +270,7 @@ h3 a:hover {
 
 .destacado h3 {
   max-width: 14ch !important;
+  /* ancho máximo texto*/
   font-size: var(--fs-xl);
 }
 
@@ -249,6 +292,10 @@ h3 a:hover {
 /* Mas Historias */
 .posts .ultp-block-item {
   width: 100%;
+}
+
+.posts .ultp-block-row {
+  /* corrección grid de post responsive*/
 }
 
 @media (max-width: 514px) {
@@ -308,6 +355,7 @@ h3 a:hover {
 }
 
 .libros figcaption {
+  /* establece tipografia para descarga libros*/
   color: var(--clr-black) !important;
   font-family: var(--ff-sans);
   font-size: var(--fs-r);
@@ -319,23 +367,25 @@ h3 a:hover {
 
 /* Footer */
 .logos {
-  display: -ms-grid;
-  display: grid;
-  gap: 2em 1em;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  place-items: start center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.logos > :first-child {
-  grid-column: span 2;
-  width: auto;
-  padding: 0 1em;
-  max-height: 80px;
+.logos div {
+  margin: 0 0.5em;
 }
 
-.logos > :nth-child(2) {
-  place-self: start end;
+.logos div:nth-child(1) {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .logos img {
@@ -421,6 +471,7 @@ h3 a:hover {
   font-size: var(--fs-s);
 }
 
+/* Mailchimp*/
 .mc-field-group {
   width: 100%;
   margin: 1em auto;
@@ -458,9 +509,5 @@ h3 a:hover {
 
 .ct-featured-image figcaption {
   margin: 0.5em 2em;
-}
-
-.titular {
-  font-family: var(--ff-sans);
 }
 /*# sourceMappingURL=custom.css.map */
