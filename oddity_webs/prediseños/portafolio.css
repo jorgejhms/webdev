@@ -49,7 +49,7 @@ p {
   box-shadow: var(--glow);
 }
 .card:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
   z-index: 1;
 }
 .card:hover .card__overlay {
@@ -80,7 +80,10 @@ p {
   transition: all 0.4s ease-in-out 0s;
 }
 .card__details {
-  padding: 1em;
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 1.5em;
 }
 
 .web-border {
