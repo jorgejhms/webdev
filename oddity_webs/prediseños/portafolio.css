@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --ff: Roboto, sans-serif;
+  --ff-h: "Source Sans 3", sans-serif;
+  --ff-mono: "JetBrains Mono", monospace;
+  --clr-primary: #2F46E3;
+  --clr-alternate: #AD5829;
+  --clr-text: #1C1C1C;
+  --clr-bg: #D8D8D8;
+  --clr-white: #FFF;
+  --glow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+
+body {
+  background: var(--clr-bg);
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: var(--ff-h);
+  color: var(--clr-primary);
+}
+
+p {
+  font-family: var(--ff);
+  color: var(--clr-text);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.card {
+  position: relative;
+  background: white;
+  flex: 1 1 330px;
+  min-width: 250px;
+  margin: 1em;
+  transition: all 0.4s ease-in-out 0s;
+  box-shadow: var(--glow);
+}
+.card:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+.card:hover .card__overlay {
+  opacity: 1;
+}
+.card:hover .card__description {
+  visibility: visible;
+}
+.card__description {
+  color: var(--clr-bg);
+}
+.card__img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+.card__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+.card__details {
+  padding: 1em;
+}
+
+.web-border {
+  --fs: 0.7rem;
+  border-width: 0.5em 0.2em;
+  border-style: solid;
+  border-color: black;
+  border-radius: 20px;
+  margin: 3em auto;
+  width: 700px;
+  height: auto;
+  max-width: 1920px;
+  max-height: 1080px;
+  aspect-ratio: 16/9;
+  display: block;
+  box-shadow: var(--glow);
+}
+
+/*# sourceMappingURL=portafolio.css.map */
