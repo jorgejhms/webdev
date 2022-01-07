@@ -26,6 +26,10 @@ p {
   color: var(--clr-text);
 }
 
+.center {
+  text-align: center;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;

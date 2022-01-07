@@ -1,0 +1,109 @@
+// Importando fuentes: Roboto, JetBrains, Source Sans Pro
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+// Mixis
+
+@mixin headings { // Aplica a todos los headers
+  h1, h2, h3,
+  h4, h5, h6 {
+    @content;
+  }
+}
+
+:root{
+
+  //  Tipografias básicas
+  --ff: Roboto, sans-serif;
+  --ff-h: "Source Sans Pro", sans-serif;
+  --ff-mono: "JetBrains Mono", monospace;
+
+  // Paleta de colores
+  --clr-primary: #2F46E3;
+  --clr-alternate: #AD5829;
+  --clr-text: #1C1C1C;
+  --clr-bg: #D8D8D8;
+  --clr-card: #FAFAFA;
+  --clr-white: #FFF;
+
+  --shadow: 5px 10px 20px 1px rgba(128,128,128,0.2)
+}
+
+body {
+  background: var(--clr-white)
+}
+
+@include headings {
+  font-family: var(--ff-h);
+  color: var(--clr-primary);
+}
+
+p {
+  font-family: var(--ff);
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin:0 auto;
+}
+
+.cards_frame{
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(6, auto);
+  // overflow-x: scroll;
+  padding: 2em 0.5em;
+}
+
+.card{
+  display: grid;
+  border: 1px solid var(--clr-bg);
+  background: var(--clr-card);
+  padding: 2em;
+  width: 250px;
+  height: 350px;
+  border-radius: 100px 20px 20px 20px;
+  box-shadow: var(--shadow);
+  transition: all 300ms ease-in-out;
+  animation: fade-in-right 1s backwards;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}n) {
+      animation-delay: #{$i * 0.2}s;
+    }
+  }
+
+  &:hover{
+    z-index: 2;
+    transform: translate(-.5em, -1em) rotate(-5deg) scale(1.05);
+  }
+
+  &:hover~&{
+    transform: translateX(200px);
+  }
+
+  &:not(:first-child){
+    margin-left: -300px;
+  }
+
+  &__price {
+    font-family: var(--ff-h);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--clr-primary);
+    // text-align: center;
+  }
+}
+
+// Animaciones
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(100%) translateY(20%) rotate(10deg);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
