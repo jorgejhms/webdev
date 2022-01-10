@@ -7,9 +7,9 @@
   --clr-alternate: #AD5829;
   --clr-text: #1C1C1C;
   --clr-bg: #D8D8D8;
-  --clr-card: #FAFAFA;
+  --clr-card: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
   --clr-white: #FFF;
-  --shadow: 5px 10px 20px 1px rgba(128,128,128,0.2) ;
+  --shadow: 5px 10px 20px 1px rgba(128,128,0,0.2) ;
 }
 
 body {
@@ -40,7 +40,7 @@ p {
 
 .card {
   display: grid;
-  border: 1px solid var(--clr-bg);
+  border: 1px solid rgba(200, 200, 200, 0.3);
   background: var(--clr-card);
   padding: 2em;
   width: 250px;
