@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+:root {
+  --ff: Roboto, sans-serif;
+  --ff-h: "Source Sans Pro", sans-serif;
+  --ff-mono: "JetBrains Mono", monospace;
+  --clr-primary: #2F46E3;
+  --clr-alternate: #AD5829;
+  --clr-text: #1C1C1C;
+  --clr-bg: #D8D8D8;
+  --clr-card: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
+  --clr-white: #FFF;
+  --shadow: 5px 10px 20px 1px rgba(128,128,0,0.2) ;
+}
+
+body {
+  background: var(--clr-white);
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: var(--ff-h);
+  color: var(--clr-primary);
+}
+
+p {
+  font-family: var(--ff);
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cards_frame {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(6, auto);
+  padding: 2em 0.5em;
+}
+
+.card {
+  display: grid;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  background: var(--clr-card);
+  padding: 2em;
+  width: 250px;
+  height: 350px;
+  border-radius: 100px 20px 20px 20px;
+  box-shadow: var(--shadow);
+  transition: all 300ms ease-in-out;
+  animation: fade-in-right 1s backwards;
+}
+.card:nth-child(1n) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(2n) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(3n) {
+  animation-delay: 0.6s;
+}
+.card:nth-child(4n) {
+  animation-delay: 0.8s;
+}
+.card:nth-child(5n) {
+  animation-delay: 1s;
+}
+.card:nth-child(6n) {
+  animation-delay: 1.2s;
+}
+.card:hover {
+  z-index: 2;
+  transform: translate(-0.5em, -1em) rotate(-5deg) scale(1.05);
+}
+.card:hover ~ .card {
+  transform: translateX(200px);
+}
+.card:not(:first-child) {
+  margin-left: -300px;
+}
+.card__price {
+  font-family: var(--ff-h);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+}
+.card img {
+  max-width: 100%;
+}
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(100%) translateY(20%) rotate(10deg);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+/*# sourceMappingURL=productos.css.map */
