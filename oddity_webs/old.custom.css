@@ -1,0 +1,63 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.servicios{
+	  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.servicios .servicios__item {	
+	color: rgb(6, 30, 53);
+  background: linear-gradient(90deg, white 0%, #f1f1f1 100%);
+	border-radius: 70px 10px 10px 10px;
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0px 0px 50px 1px rgba(0,20,100,0.5);
+  animation: fadeIn 2s;
+}
+
+.servicios .servicios__item:hover {
+    transform: translate(0, -1.5rem) rotate(-3deg) scale(1.1);
+    transition: transform 500ms ease-in-out;
+  }
+
+.servicios .servicios__info {
+	font-size: 0.8rem;
+}
+.servicios .servicios__precio {
+	font-size: 2rem;
+	font-weight: 900;
+}
+
+/* Animaciones
+ * ============ */
+
+.grow {
+	transition: transform 100ms cubic-bezier(.55,.06,.68,.19);
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  0% {opacity:0; transform: translatey(100%)}
+  100% {opacity:1}
+}
+
+/* Rediseño
+ * ======== */
+
+.seccion{
+	margin-bottom: 0px;
+	padding: 4em 0;
+}
+
+.seccion_clara .wp-block-columns {
+	color: var(--paletteColor3);
+}
+
+.cms-logo {
+	padding: 0 5em;
+}

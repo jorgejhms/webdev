@@ -1,0 +1,133 @@
+// Mixins
+
+@mixin phone {
+  @media only screen and (max-device-width: 600px) { @content; }
+}
+
+// Estilos generales --------------------------------------------------------
+
+:root {
+  --shadow: 0px 20px 20px 1px rgba(128,128,128,0.2);
+}
+
+html { scroll-behavior: smooth; } // Asegura un scrolling suave
+
+.seccion{                       // Retira margenes tema Blocksy
+  margin-bottom: 0;
+  padding: 5em 0;
+
+  &--oscura{ color: var(--paletteColor8);} // Paleta Blocksy
+  &--full-screen{ min-height: 100vh;}
+
+}
+
+@include phone {
+  .seccion {
+    padding: 3em 0;
+    &--full-screen { min-height: auto; }
+  }
+}
+
+.fade-in-up     { animation: fade-in-up 2s backwards; }
+.fade-in-right  { animation: fade-in-right 2s backwards; }
+.fade-in-down   { animation: fade-in-down 2s backwards; }
+.fade-in-left   { animation: fade-in-left 2s backwards; }
+
+// Secciones específicas ----------------------------------------------------
+
+// Portada
+.portada, .entry-content > :first-child {
+  margin-top: -134px !important; // Coloca por debajo de cabecera
+}
+
+@include phone {
+  .portada, .entry-content > :first-child {
+    margin-top: 0 !important;
+  }
+}
+
+.slogan { font-size: 4.4rem; }
+
+@include phone {
+  .slogan { font-size: 2.9rem; }
+}
+
+// Portafolio antiguo
+
+.portafolio {
+
+  &__columnas {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  &__tarjeta {
+    min-height: 450px;
+    background-color: var(--paletteColor7);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: var(--shadow);
+    display:flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction:column;
+    justify-content:space-around;
+    transition: all 100ms ease-in-out;
+
+    &:hover { transform: scale(1.1); }
+
+    figure { width: 100%; }
+
+    p {
+      color: var(--paletteColor3);
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      text-align: center;
+    }
+  }
+}
+
+// Servicios antiguo
+
+.servicios {
+  &__columnas {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &__tarjeta {
+    color: var(--paletteColor3);
+    background-color: var(--paletteColor7);
+    padding: 1em;
+    text-align: center;
+    box-shadow: var(--shadow);
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between
+  }
+}
+
+// Animaciones --------------------------------------------------------------
+
+@keyframes fade-in-up {
+  0%    {opacity:0; transform: translateY(100%);}
+  100%  {opacity: 1;}
+}
+
+@keyframes fade-in-right {
+  0%    {opacity:0; transform: translateX(100%);}
+  100%  {opacity: 1;}
+}
+
+@keyframes fade-in-down {
+  0%    {opacity:0; transform: translateY(-100%);}
+  100%  {opacity: 1;}
+}
+
+@keyframes fade-in-left {
+  0%    {opacity:0; transform: translateX(-100%);}
+  100%  {opacity: 1;}
+}
