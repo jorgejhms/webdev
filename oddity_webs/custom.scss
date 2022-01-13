@@ -46,6 +46,7 @@ html { scroll-behavior: smooth; } // Asegura un scrolling suave
 
 .portada {
   min-height: calc(100vh - 134px);
+  padding: 0;
 }
 
 @include phone {
@@ -237,6 +238,11 @@ html { scroll-behavior: smooth; } // Asegura un scrolling suave
 
 // Animaciones --------------------------------------------------------------
 
+.rocket-launch {
+  animation: rocket-launch 500ms ease-out forwards;
+  animation-delay: 5s
+}
+
 @keyframes fade-in-up {
   0%    {opacity:0; transform: translateY(100%);}
   100%  {opacity: 1;}
@@ -266,4 +272,9 @@ html { scroll-behavior: smooth; } // Asegura un scrolling suave
     transform: translateX(0);
     opacity: 100%;
   }
+}
+
+@keyframes rocket-launch {
+  0% {opacity: 1;}
+  100% {opacity: 0; transform: translateY(-100%);}
 }
