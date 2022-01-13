@@ -42,6 +42,13 @@ html { scroll-behavior: smooth; } // Asegura un scrolling suave
 .fade-in-down   { animation: fade-in-down 2s backwards; }
 .fade-in-left   { animation: fade-in-left 2s backwards; }
 
+.screenshot {
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  animation: fade-in-right 2s backwards;
+  animation-delay: 1s;
+}
+
 // Secciones específicas ----------------------------------------------------
 
 .portada {
@@ -193,7 +200,7 @@ html { scroll-behavior: smooth; } // Asegura un scrolling suave
     }
   }
 
-  &:hover {
+  &:hover, &:active {
     transform: scale(1.1);
     z-index: 1;
   }
@@ -277,4 +284,18 @@ html { scroll-behavior: smooth; } // Asegura un scrolling suave
 @keyframes rocket-launch {
   0% {opacity: 1;}
   100% {opacity: 0; transform: translateY(-100%);}
+}
+
+@keyframes flip-in-x {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  60% { opacity: 1; }
+
+  to {
+    transform: perspective(400px);
+  }
 }
